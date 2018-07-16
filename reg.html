@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<form action="" method="post">
+		<ul>
+			<li>
+				<label for="">用户名：</label>
+				<input type="text" name="username" id="user" />
+				<span id="msg"></span>
+			</li>
+			<li><label for="">密  码：</label><input type="password" name="password" /></li>
+			<li><label for="">&nbsp;</label><input type="submit" value="注册" /></li>
+		</ul>
+	</form>
+
+	<iframe src="" frameborder="1" width="400" height="100" id="ifr"></iframe>
+	<script type="text/javascript">
+		var user = document.getElementById('user');
+		var ifr = document.getElementById('ifr');
+		//注册失去焦点事件
+		user.onblur = function(){
+			//向iframe发请求
+			ifr.src = "doreg.php?username="+this.value;
+		}
+	</script>
+</body>
+</html>
